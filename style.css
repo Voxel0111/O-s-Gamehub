@@ -1,4 +1,4 @@
- @import url('https://rsms.me/inter/inter.css');
+@import url('https://rsms.me/inter/inter.css');
 html {
   background-color: #202124;
   color: #ffffff;
@@ -17,7 +17,7 @@ html {
     text-align: center;
   }
   a:link {
-    color: #8ab4f8;
+    color: #ffffff;
     background-color: transparent;
     text-decoration: none;
   }
@@ -31,3 +31,30 @@ html {
     background-color: transparent;
     text-decoration: underline;
   }
+
+
+body {
+  margin: 0;
+}
+
+.search-container {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  max-width: 400px; /* Adjust the maximum width as needed */
+}
+
+.search-container input[type=text] {
+  padding: 5px;
+  width: 100%; /* Make the input take the full width of the container */
+}
+
+#gameLinksContainer {
+  margin-top: 40px; /* Add margin to create space below the search box */
+  display: flex;
+  flex-direction: column; /* Align links vertically */
+}
+
+#noResultsMessage {
+  margin-left: 10px;
+}
