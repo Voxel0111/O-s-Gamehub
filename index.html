@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta name="description" content="The Best website for unblocked games!">
     <meta name="keywords" content="Games,Unblocked Games,Unity,WebGL,Unblocked,Google Sites,O's game hub,O's unblocked games,O's games unblocked">
@@ -9,15 +9,25 @@
     <title>O's Game Hub</title>
     <link rel="icon" type="image/x-icon" href="resources/favicon.ico">
     <link rel="stylesheet" href="style.css" />
-    </head>
+</head>
 
-      <body>
-         <div class="heading">
-          <h1>O's Game Hub</h1>
-         </div>
-        <br><br><br><br>
-        <div>
-          <a href="1">1</a>
+<body>
+    <header>
+        <h1>O's Game Hub</h1>
+        <ul>
+            <li>Hope the search box makes things easier</li>
+          </ul> 
+        <div class="search-container">
+            <form>
+                <input type="text" name="search" placeholder="Search the games" oninput="filterGames(this.value)">
+            </form>
+        </div>
+    </header>
+
+    <div id="gameLinksContainer">
+        <!-- Your game links here -->
+        <!-- Example link: <a href="1">1</a> -->
+        <a href="1">1</a>
           <br><br>
           <a href="1v1.lol">1v1.LOL</a>
           <br><br>
@@ -178,13 +188,41 @@
           <a href="worldshardestgame2">World's Hardest Game 2</a>
           <br><br>
           <a href="xx142b2.exe">xx142-b2.exe</a>
-        </div>
-        <p>(More games coming soon!)</p>
+        <!-- Add the rest of your game links here -->
+    </div>
+    <p id="noResultsMessage" style="display: none;">No results found.</p>
 
-        <footer>
-            <div class="footer">
-              <a href="https://">Main Site</a>
-            </div>
-        </footer>
-    </body>
+    <footer>
+        <div class="footer">
+            <a href="https://voxel0111.github.io/O-s-Gamehub/">Main Site</a>
+        </div>
+    </footer>
+
+    <script>
+        function filterGames(searchTerm) {
+            var links = document.querySelectorAll("#gameLinksContainer a");
+            var noResultsMessage = document.getElementById("noResultsMessage");
+
+            searchTerm = searchTerm.toLowerCase();
+
+            var foundResults = false;
+
+            links.forEach(function (link) {
+                var linkText = link.textContent.toLowerCase();
+                if (linkText.includes(searchTerm)) {
+                    link.style.display = "block";
+                    foundResults = true;
+                } else {
+                    link.style.display = "none";
+                }
+            });
+
+            if (foundResults) {
+                noResultsMessage.style.display = "none";
+            } else {
+                noResultsMessage.style.display = "block";
+            }
+        }
+    </script>
+</body>
 </html>
